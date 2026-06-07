@@ -326,7 +326,7 @@ elif st.session_state.page == "Model Segmentation":
 
     # 选择模型权重
     # selected_weights = st.multiselect("选择血管区域", WEIGHTS_LIST, default=["CCV"])
-    selected_weights = st.multiselect("Vascular Region Selection", WEIGHTS_LIST, default=["CCV"])
+    selected_weights = st.multiselect("Select Vascular Region", WEIGHTS_LIST, default=["CCV"])
 
     # 选择示例图像
     demo_images = glob.glob("images/*.bmp")
