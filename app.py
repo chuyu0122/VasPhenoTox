@@ -312,9 +312,9 @@ if st.session_state.page == "Introduction":
         st.markdown(
             """
             <div style="text-align: right; font-size: 14px;">
-                <p><strong>Copyright</strong><br>
+                <p><strong>Contact us:</strong><br>
                 Laboratory of Yanhong Wei<br>
-                School of Public Health, Sun Yat-sen University. All rights reserved</p>
+                School of Public Health, Sun Yat-sen University.</p>
             </div>
             """,
             unsafe_allow_html=True
