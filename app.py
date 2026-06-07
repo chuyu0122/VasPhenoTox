@@ -225,8 +225,8 @@ if st.session_state.page == "Introduction":
         <div style="text-align: center;">
             <h1>Wealcome to VasPhenoTox</h1>
             <p style="font-size: 25px;">
-                This is an interactive data analysis platform powered by deep learning, dedicated to the automated analysis of vascular phenotypic images in chemical toxicity testing<br>
-                The zebrafish vascular image analysis module is now available. Users can upload images and select vascular regions for analysis<br>
+                This is an interactive platform automating vascular phenotypic image analysis for chemical toxicity testing<br>
+                Users can upload images and select vascular regions for zebrafish vascular image analysis<br>
         </div>
         """,
         unsafe_allow_html=True
@@ -292,14 +292,14 @@ if st.session_state.page == "Introduction":
         
         
         
-        " target="_blank" style="font-size: 16px; text-decoration: underline; text-align: center; display: block;">文章地址：https://doi.org/10.1289/EHP13214</a>
-                        </p>
+        "Citation：Zhong X, Chen J, Zhang Z, Zhu Q, Ji D, Ke W, Niu C, Wang C, Zhao N, Chen W, Jia K, Liu Q, Song M, Liu C, Wei Y.Development of an Automated Morphometric Approach to 
+        Assess Vascular Outcomes following Exposure to Environmental Chemicals in Zebrafish.Environ Health Perspect.doi: 10.1289/EHP13214.</p>
                     </div>
                     """,
             unsafe_allow_html=True
         )
     else:
-        st.write("图片未找到，请检查 'themes/4.jpg' 是否存在")
+        st.write("Check 'themes/4.jpg' themes")
 
     col_left, col_right = st.columns([1, 1])
 
