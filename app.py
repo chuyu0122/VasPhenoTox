@@ -223,13 +223,10 @@ if st.session_state.page == "Introduction":
     st.markdown(
         """
         <div style="text-align: center;">
-            # <h1>欢迎体验 VasPhenoTox</h1>
             <h1>Wealcome to VasPhenoTox</h1>
             <p style="font-size: 25px;">
-                # 这是一个基于深度学习的交互式数据分析平台，专注于化学物毒性测试的血管表型组图片自动化分析<br>
                 This is an interactive data analysis platform powered by deep learning, dedicated to the automated analysis of vascular phenotypic images in chemical toxicity testing<br>
                 The zebrafish vascular image analysis module is now available. Users can upload images and select vascular regions for analysis<br>
-                # 目前已开放斑马鱼血管图片分析模块，用户可上传图片，选择不同的目标血管区域进行分析<br>
         </div>
         """,
         unsafe_allow_html=True
@@ -319,10 +316,8 @@ if st.session_state.page == "Introduction":
             """
             <div style="text-align: right; font-size: 14px;">
                 <p><strong>Copyright</strong><br>
-                # 地址: 广州市中山二路74号<br>
-                # 中山大学公共卫生学院</p>                
                 Laboratory of Yanhong Wei<br>
-                School of Public Health, Sun Yat-sen University</p>
+                School of Public Health, Sun Yat-sen University. All rights reserved</p>
             </div>
             """,
             unsafe_allow_html=True
@@ -383,7 +378,7 @@ elif st.session_state.page == "Model Segmentation":
 
         # 展示逻辑：仅显示第一张照片的分割结果
         first_image_name = images_to_process[0][1]  # 第一张图片的名称
-        st.write("### 分割预览（仅第一张）")
+        st.write("### Segmentation Preview(First Image Only)")
         for i, weight in enumerate(selected_weights):
             if i < 4:  # 第一行：前四个权重
                 if i == 0:
@@ -408,11 +403,11 @@ elif st.session_state.page == "Model Segmentation":
         # 汇总逻辑：生成包含所有照片的表格
         if all_features:
             total_df = pd.concat(all_features, ignore_index=True)
-            st.write("### 分析结果汇总")
+            st.write("### Results")
             st.dataframe(total_df)
 
         # 下载所有分割图片
-        if st.button("下载分割图片"):
+        if st.button("Download Images"):
             zip_buffer = create_zip_of_results([file_obj for file_obj, _ in images_to_process], selected_weights)
             st.download_button(
                 label="Download ZIP File",
