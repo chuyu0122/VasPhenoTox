@@ -224,7 +224,7 @@ if st.session_state.page == "Introduction":
         """
         <div style="text-align: center;">
             <h1>Wealcome to VasPhenoTox</h1>
-            <p style="font-size: 25px;">
+            <p style="font-size: 30px;">
                 This is an interactive platform automating vascular phenotypic image analysis for chemical toxicity testing.<br>
                 Users can upload images and select vascular regions for zebrafish vascular image analysis.<br>
         </div>
@@ -290,7 +290,7 @@ if st.session_state.page == "Introduction":
         
         <strong>Citation：
         Zhong X, Chen J, Zhang Z, Zhu Q, Ji D, Ke W, Niu C, Wang C, Zhao N, Chen W, Jia K, Liu Q, Song M, Liu C, Wei Y.Development of an Automated Morphometric Approach to 
-        <strong> Assess Vascular Outcomes following Exposure to Environmental Chemicals in Zebrafish.Environ Health Perspect.doi: 10.1289/EHP13214.</p>
+        <strong> Assess Vascular Outcomes following Exposure to Environmental Chemicals in Zebrafish.Environ Health Perspect.2024 May;132(5):57001.doi: 10.1289/EHP13214.</p>
                     </div>
                     """,
             unsafe_allow_html=True
