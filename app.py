@@ -200,10 +200,12 @@ if 'page' not in st.session_state:
 # 导航栏
 with st.sidebar:
     st.title("VasPhenoTox")
-    if st.button("主页"):
+    # if st.button("主页"):
+    if st.button("Home"):
         st.session_state.page = "Introduction"
         st.experimental_rerun()
-    if st.button("分析"):
+    # if st.button("分析"):
+    if st.button("Analysis"):
         st.session_state.page = "Model Segmentation"
         st.experimental_rerun()
 
@@ -221,16 +223,20 @@ if st.session_state.page == "Introduction":
     st.markdown(
         """
         <div style="text-align: center;">
-            <h1>欢迎体验 VasPhenoTox</h1>
+            # <h1>欢迎体验 VasPhenoTox</h1>
+            <h1>Wealcome to VasPhenoTox</h1>
             <p style="font-size: 25px;">
-                这是一个基于深度学习的交互式数据分析平台，专注于化学物毒性测试的血管表型组图片自动化分析<br>
-                目前已开放斑马鱼血管图片分析模块，用户可上传图片，选择不同的目标血管区域进行分析<br>
+                # 这是一个基于深度学习的交互式数据分析平台，专注于化学物毒性测试的血管表型组图片自动化分析<br>
+                This is an interactive data analysis platform powered by deep learning, dedicated to the automated analysis of vascular phenotypic images in chemical toxicity testing<br>
+                The zebrafish vascular image analysis module is now available. Users can upload images and select vascular regions for analysis<br>
+                # 目前已开放斑马鱼血管图片分析模块，用户可上传图片，选择不同的目标血管区域进行分析<br>
         </div>
         """,
         unsafe_allow_html=True
     )
     st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-    if st.button("开始分析", key="start_btn", help="点击进入模型分割页面"):
+    # if st.button("开始分析", key="start_btn", help="点击进入模型分割页面"):
+    if st.button("Analysis", key="start_btn", help="Click to enter the model segmentation page"):
         st.session_state.page = "Model Segmentation"
         st.experimental_rerun()
     st.markdown(
@@ -312,30 +318,37 @@ if st.session_state.page == "Introduction":
         st.markdown(
             """
             <div style="text-align: right; font-size: 14px;">
-                <p><strong>联系我们</strong><br>
-                地址: 广州市中山二路74号<br>
-                中山大学公共卫生学院</p>
+                <p><strong>Copyright</strong><br>
+                # 地址: 广州市中山二路74号<br>
+                # 中山大学公共卫生学院</p>                
+                Laboratory of Yanhong Wei<br>
+                School of Public Health, Sun Yat-sen University</p>
             </div>
             """,
             unsafe_allow_html=True
         )
 
 elif st.session_state.page == "Model Segmentation":
-    st.write("## 斑马鱼血管分析")
+    # st.write("## 斑马鱼血管分析")
+    st.write("## Zebrafish Vascular Image Analysis")
 
     # 选择模型权重
-    selected_weights = st.multiselect("选择血管区域", WEIGHTS_LIST, default=["CCV"])
+    # selected_weights = st.multiselect("选择血管区域", WEIGHTS_LIST, default=["CCV"])
+    selected_weights = st.multiselect("Vascular Region Selection", WEIGHTS_LIST, default=["CCV"])
 
     # 选择示例图像
     demo_images = glob.glob("images/*.bmp")
     demo_image_options = ["None"] + [os.path.basename(img) for img in demo_images]
-    selected_demo_image = st.selectbox("选择示例图片", demo_image_options, index=0)
+    # selected_demo_image = st.selectbox("选择示例图片", demo_image_options, index=0)
+    selected_demo_image = st.selectbox("eg.", demo_image_options, index=0)
 
     # 上传图片
-    uploaded_files = st.file_uploader("上传图片", type=["jpg", "png", "bmp"], accept_multiple_files=True)
+    # uploaded_files = st.file_uploader("上传图片", type=["jpg", "png", "bmp"], accept_multiple_files=True)
+    uploaded_files = st.file_uploader("Upload", type=["jpg", "png", "bmp"], accept_multiple_files=True)
 
     # 删除结果按钮
-    if st.button("删除结果"):
+    # if st.button("删除结果"):
+    if st.button("Remove"):
         st.session_state.clear()
         st.session_state.page = "Model Segmentation"
         st.experimental_rerun()
