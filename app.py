@@ -223,10 +223,10 @@ if st.session_state.page == "Introduction":
     st.markdown(
         """
         <div style="text-align: center;">
-            <h1>Wealcome to VasPhenoTox</h1>
+            <h1>Welcome to VasPhenoTox</h1>
             <p style="font-size: 28px;">
                 This is an interactive platform automating vascular phenotypic image analysis for chemical toxicity testing.<br>
-                Users can upload images and select vascular regions for zebrafish vascular image analysis.<br>
+                Users can upload images and select vascular regions for zebrafish.<br>
         </div>
         """,
         unsafe_allow_html=True
