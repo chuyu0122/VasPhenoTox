@@ -375,7 +375,7 @@ elif st.session_state.page == "Model Segmentation":
 
         # 展示逻辑：仅显示第一张照片的分割结果
         first_image_name = images_to_process[0][1]  # 第一张图片的名称
-        st.write("### Segmentation Preview(First Image Only)")
+        st.write("### Segmentation Preview")
         for i, weight in enumerate(selected_weights):
             if i < 4:  # 第一行：前四个权重
                 if i == 0:
