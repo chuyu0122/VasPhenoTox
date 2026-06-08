@@ -13,7 +13,8 @@ from tools import *  # Assuming this includes get_largest_contour, make_mask_by_
 import base64
 from seg_all import seg_function_all
 import pandas as pd
-
+from pathlib import Path
+import urllib.request
 # 设置页面配置（必须放在最前面）
 st.set_page_config(page_title="Zebrafish AI", layout="wide")
 
