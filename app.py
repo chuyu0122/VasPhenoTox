@@ -335,7 +335,7 @@ elif st.session_state.page == "Model Segmentation":
 
     # 上传图片
     # uploaded_files = st.file_uploader("上传图片", type=["jpg", "png", "bmp"], accept_multiple_files=True)
-    uploaded_files = st.file_uploader("3.Upload", type=["jpg", "png", "bmp"], accept_multiple_files=True)
+    uploaded_files = st.file_uploader("3.Upload Your Image", type=["jpg", "png", "bmp"], accept_multiple_files=True)
 
     # 删除结果按钮
     # if st.button("删除结果"):
