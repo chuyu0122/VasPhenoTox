@@ -225,7 +225,7 @@ if st.session_state.page == "Introduction":
         <div style="text-align: center;">
             <h1>Welcome to VasPhenoTox</h1>
             <p style="font-size: 26px;">
-                This is an interactive platform automating zebrafish vascular phenotypic image analysis for chemical toxicity testing.<br>
+                This is an interactive platform automating zebrafish vascular phenotypic image analysis for chemical toxicity testing<br>
         </div>
         """,
         unsafe_allow_html=True
