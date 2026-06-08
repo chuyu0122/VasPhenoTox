@@ -95,15 +95,30 @@ WEIGHTS_FILES = {
     "ISV": "weights/ISV_best_model_1024_416_cpu.pth",
     "SIV": "weights/SIV_best_model_1024_416_cpu.pth"
 }
+WEIGHTS_URLS = {
+    "CCV": "https://github.com/MUJITA123/streamlit/releases/download/model/CCV_best_model_1024_416_cpu.pth",
+    "CVP": "https://github.com/MUJITA123/streamlit/releases/download/model/CV2_best_model_1024_416_cpu.pth",
+    "ISV": "https://github.com/MUJITA123/streamlit/releases/download/model/ISV_best_model_1024_416_cpu.pth",
+    "SIV": "https://github.com/MUJITA123/streamlit/releases/download/model/SIV_best_model_1024_416_cpu.pth"
+}
 
+def ensure_weight_file(weight):
+    file_path = Path(WEIGHTS_FILES[weight])
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+
+    if not file_path.exists():
+        url = WEIGHTS_URLS[weight]
+        with st.spinner(f"正在下载 {weight} 模型权重，请稍候..."):
+            urllib.request.urlretrieve(url, file_path)
+
+    return str(file_path)
+    
 # 缓存模型加载（10分钟过期）
 @st.cache_resource(ttl=600)
 def load_model(weight):
-    file_path = WEIGHTS_FILES[weight]
-    if not os.path.exists(file_path):
-        raise FileNotFoundError(f"模型文件 {file_path} 不存在，请检查 weights 文件夹。")
+    file_path = ensure_weight_file(weight)
     model = torch.load(file_path, map_location=DEVICE)
-    model.float()  # 将模型参数转换为 torch.float32
+    model.float()
     model.eval()
     return model
 
